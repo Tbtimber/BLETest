@@ -15,7 +15,7 @@ Command:
   -Ld:/mplabx/bin/bin/../../support/dsPIC30F/gld \
   -Ld:/mplabx/bin/bin/../../support/dsPIC33E/gld \
   -Ld:/mplabx/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/_ext/1457049706/newmainXC16.o \
+  build/default/production/newmainXC16.o \
   --defsym=__MPLAB_BUILD=1 \
   -Tp24FV16KM202.gld.00 \
   --stack=16 \
@@ -119,7 +119,7 @@ FICD             0xf8000e           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/_ext/1457049706/newmainXC16.o
+LOAD build/default/production/newmainXC16.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD pPIC24Fxxx
 LOAD d:/mplabx/bin/bin/../../lib\libfx-elf.a
@@ -190,26 +190,26 @@ __FICD
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x4fc
+.debug_info       0x000000        0x4e8
  *(.debug_info)
- .debug_info      0x000000        0x4fc build/default/production/_ext/1457049706/newmainXC16.o
+ .debug_info      0x000000        0x4e8 build/default/production/newmainXC16.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0xd4
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0xd4 build/default/production/_ext/1457049706/newmainXC16.o
+ .debug_abbrev    0x000000         0xd4 build/default/production/newmainXC16.o
 
-.debug_line       0x000000         0xfe
+.debug_line       0x000000         0xea
  *(.debug_line)
- .debug_line      0x000000         0xfe build/default/production/_ext/1457049706/newmainXC16.o
+ .debug_line      0x000000         0xea build/default/production/newmainXC16.o
 
 .debug_frame      0x000000         0x24
  *(.debug_frame)
- .debug_frame     0x000000         0x24 build/default/production/_ext/1457049706/newmainXC16.o
+ .debug_frame     0x000000         0x24 build/default/production/newmainXC16.o
 
 .debug_str        0x000000         0x13
  *(.debug_str)
- .debug_str       0x000000         0x13 build/default/production/_ext/1457049706/newmainXC16.o
+ .debug_str       0x000000         0x13 build/default/production/newmainXC16.o
 
 .debug_loc
  *(.debug_loc)
@@ -221,7 +221,7 @@ __FICD
                   0x000000         0x1b
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x1b build/default/production/_ext/1457049706/newmainXC16.o
+                  0x000000         0x1b build/default/production/newmainXC16.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -229,7 +229,7 @@ __FICD
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/_ext/1457049706/newmainXC16.o
+                  0x000000         0x18 build/default/production/newmainXC16.o
 
 .ivt              0x000004         0xfc
                   0x000004          0x4 LONG 0x29a DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
@@ -1252,41 +1252,41 @@ LOAD data_init
 .debug_pubtypes
                   0x000018         0x4e
  .debug_pubtypes
-                  0x000018         0x4e build/default/production/_ext/1457049706/newmainXC16.o
+                  0x000018         0x4e build/default/production/newmainXC16.o
 
 __c30_signature
                   0x000066         0x12
  __c30_signature
-                  0x000066          0x6 build/default/production/_ext/1457049706/newmainXC16.o
+                  0x000066          0x6 build/default/production/newmainXC16.o
  __c30_signature
                   0x00006c          0x6 d:/mplabx/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
  __c30_signature
                   0x000072          0x6 d:/mplabx/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
 
 .config_ICS       0xf8000e          0x2
- .config_ICS      0xf8000e          0x2 build/default/production/_ext/1457049706/newmainXC16.o
+ .config_ICS      0xf8000e          0x2 build/default/production/newmainXC16.o
 
 .config_MCLRE     0xf8000c          0x2
- .config_MCLRE    0xf8000c          0x2 build/default/production/_ext/1457049706/newmainXC16.o
+ .config_MCLRE    0xf8000c          0x2 build/default/production/newmainXC16.o
 
 .config_WINDIS    0xf8000a          0x2
  .config_WINDIS
-                  0xf8000a          0x2 build/default/production/_ext/1457049706/newmainXC16.o
+                  0xf8000a          0x2 build/default/production/newmainXC16.o
 
 .config_FCKSM     0xf80008          0x2
- .config_FCKSM    0xf80008          0x2 build/default/production/_ext/1457049706/newmainXC16.o
+ .config_FCKSM    0xf80008          0x2 build/default/production/newmainXC16.o
 
 .config_IESO      0xf80006          0x2
- .config_IESO     0xf80006          0x2 build/default/production/_ext/1457049706/newmainXC16.o
+ .config_IESO     0xf80006          0x2 build/default/production/newmainXC16.o
 
 .config_GCP       0xf80004          0x2
- .config_GCP      0xf80004          0x2 build/default/production/_ext/1457049706/newmainXC16.o
+ .config_GCP      0xf80004          0x2 build/default/production/newmainXC16.o
 
 .config_BSS       0xf80000          0x2
- .config_BSS      0xf80000          0x2 build/default/production/_ext/1457049706/newmainXC16.o
+ .config_BSS      0xf80000          0x2 build/default/production/newmainXC16.o
 
 .text             0x00029e         0x3e
- .text            0x00029e         0x3e build/default/production/_ext/1457049706/newmainXC16.o
+ .text            0x00029e         0x3e build/default/production/newmainXC16.o
                   0x00029e                  _main
 
 .dinit            0x0002dc          0x2
