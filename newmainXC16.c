@@ -52,9 +52,14 @@
 
 
 int main(void) {
-    initBTModule();
+    
+    initBTModule(); //Setup UART and BT module
+    //UARTSetADTypeIOSVal();
+    __delay_ms(50);
     while(1){
-        UARTgetBaudRate();
+        UARTGetADType();
+        
+        
         __delay_ms(10);
     }
     return 0;

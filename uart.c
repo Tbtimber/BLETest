@@ -104,10 +104,20 @@ void UARTGetADType(){
     UARTBasicCommand();
     UARTWriteChar('A');
     UARTWriteChar('D');
-    UARTWriteChar('T');
-    UARTWriteChar('Y');  
+    UARTWriteChar('V');
+    UARTWriteChar('I');  
     UARTWriteChar('?');
 }
+
+void UARTSetADTypeIOSVal(){
+    UARTBasicCommand();
+    UARTWriteChar('A');
+    UARTWriteChar('D');
+    UARTWriteChar('V');
+    UARTWriteChar('I');  
+    UARTWriteChar('9');
+}
+
 void UARTSleep(){
     UARTBasicCommand();
     UARTWriteChar('S');
@@ -116,6 +126,33 @@ void UARTSleep(){
     UARTWriteChar('E');  
     UARTWriteChar('P');
 }
+
+void UARTgetBondType(){
+    UARTBasicCommand();
+    UARTWriteChar('T');
+    UARTWriteChar('Y');
+    UARTWriteChar('P');
+    UARTWriteChar('E');  
+    UARTWriteChar('?');
+}
+
+void UARTgetVersionSoft(){
+    UARTBasicCommand();
+    UARTWriteChar('V');
+    UARTWriteChar('E');
+    UARTWriteChar('R');
+    UARTWriteChar('S');  
+    UARTWriteChar('?');
+}
+void UARTgetMode(){
+    UARTBasicCommand();
+    UARTWriteChar('M');
+    UARTWriteChar('O');
+    UARTWriteChar('D');
+    UARTWriteChar('E');  
+    UARTWriteChar('?');
+}
+
 
 void UARTWakeUp(){
     int i;

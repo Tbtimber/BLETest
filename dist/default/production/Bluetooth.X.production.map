@@ -59,12 +59,12 @@ Program Memory  [Origin = 0x200, Length = 0x2a00]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0x9e            0xed  (237)
-.text                        0x29e               0x17a           0x237  (567)
-.init.delay32                0x418                0x1c            0x2a  (42)
-.text                        0x434                 0xe            0x15  (21)
-.dinit                       0x442                 0x2             0x3  (3)
+.text                        0x29e               0x1ea           0x2df  (735)
+.init.delay32                0x488                0x1c            0x2a  (42)
+.text                        0x4a4                0x14            0x1e  (30)
+.dinit                       0x4b8                 0x2             0x3  (3)
 
-                     Total program memory used (bytes):          0x366  (870) 5%
+                     Total program memory used (bytes):          0x417  (1047) 6%
 
 
 Data Memory  [Origin = 0x800, Length = 0x800]
@@ -89,8 +89,8 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00022c                  __psv_init
-                  0x00023c                  __data_init
                   0x00023c                  __data_init_standard
+                  0x00023c                  __data_init
                   0x00029a                  __DefaultInterrupt
                   0x00029e                  _resetBTModule
                   0x0002b0                  _UARTInit230400
@@ -101,13 +101,17 @@ External Symbols in Program Memory (by address):
                   0x000330                  _UARTConfigBaudRate215400
                   0x00034c                  _UARTGetFilter
                   0x000368                  _UARTGetADType
-                  0x000384                  _UARTSleep
-                  0x0003a0                  _UARTWakeUp
-                  0x0003be                  _UARTWriteChar
-                  0x0003d6                  _UARTWriteByte
-                  0x0003ee                  _initBTModule
-                  0x000418                  ___delay32
-                  0x000434                  _main
+                  0x000384                  _UARTSetADTypeIOSVal
+                  0x0003a0                  _UARTSleep
+                  0x0003bc                  _UARTgetBondType
+                  0x0003d8                  _UARTgetVersionSoft
+                  0x0003f4                  _UARTgetMode
+                  0x000410                  _UARTWakeUp
+                  0x00042e                  _UARTWriteChar
+                  0x000446                  _UARTWriteByte
+                  0x00045e                  _initBTModule
+                  0x000488                  ___delay32
+                  0x0004a4                  _main
 
 External Symbols in Program Memory (by name):
 
@@ -117,20 +121,24 @@ External Symbols in Program Memory (by name):
                   0x00034c                  _UARTGetFilter
                   0x0002b0                  _UARTInit230400
                   0x0002ce                  _UARTInit9600
-                  0x000384                  _UARTSleep
-                  0x0003a0                  _UARTWakeUp
-                  0x0003d6                  _UARTWriteByte
-                  0x0003be                  _UARTWriteChar
+                  0x000384                  _UARTSetADTypeIOSVal
+                  0x0003a0                  _UARTSleep
+                  0x000410                  _UARTWakeUp
+                  0x000446                  _UARTWriteByte
+                  0x00042e                  _UARTWriteChar
                   0x000314                  _UARTgetBaudRate
+                  0x0003bc                  _UARTgetBondType
+                  0x0003f4                  _UARTgetMode
+                  0x0003d8                  _UARTgetVersionSoft
                   0x0002fe                  _UARTtestBT
                   0x00029a                  __DefaultInterrupt
-                  0x000418                  ___delay32
+                  0x000488                  ___delay32
                   0x00023c                  __data_init
                   0x00023c                  __data_init_standard
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0003ee                  _initBTModule
-                  0x000434                  _main
+                  0x00045e                  _initBTModule
+                  0x0004a4                  _main
                   0x00029e                  _resetBTModule
 
 Memory Configuration
@@ -226,10 +234,10 @@ __FICD
 .comment
  *(.comment)
 
-.debug_info       0x000000        0xb19
+.debug_info       0x000000        0xb94
  *(.debug_info)
  .debug_info      0x000000         0xf8 build/default/production/newmainXC16.o
- .debug_info      0x0000f8        0xa21 build/default/production/uart.o
+ .debug_info      0x0000f8        0xa9c build/default/production/uart.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x158
@@ -237,15 +245,15 @@ __FICD
  .debug_abbrev    0x000000         0x36 build/default/production/newmainXC16.o
  .debug_abbrev    0x000036        0x122 build/default/production/uart.o
 
-.debug_line       0x000000        0x491
+.debug_line       0x000000        0x5c1
  *(.debug_line)
- .debug_line      0x000000         0x67 build/default/production/newmainXC16.o
- .debug_line      0x000067        0x42a build/default/production/uart.o
+ .debug_line      0x000000         0x6f build/default/production/newmainXC16.o
+ .debug_line      0x00006f        0x552 build/default/production/uart.o
 
-.debug_frame      0x000000        0x118
+.debug_frame      0x000000        0x158
  *(.debug_frame)
  .debug_frame     0x000000         0x24 build/default/production/newmainXC16.o
- .debug_frame     0x000024         0xf4 build/default/production/uart.o
+ .debug_frame     0x000024        0x134 build/default/production/uart.o
 
 .debug_str        0x000000         0x27
  *(.debug_str)
@@ -258,12 +266,12 @@ __FICD
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x12e
+                  0x000000        0x181
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x1b build/default/production/newmainXC16.o
  .debug_pubnames
-                  0x00001b        0x113 build/default/production/uart.o
+                  0x00001b        0x166 build/default/production/uart.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -1335,8 +1343,8 @@ __c30_signature
 .config_BSS       0xf80000          0x2
  .config_BSS      0xf80000          0x2 build/default/production/newmainXC16.o
 
-.text             0x00029e        0x17a
- .text            0x00029e        0x17a build/default/production/uart.o
+.text             0x00029e        0x1ea
+ .text            0x00029e        0x1ea build/default/production/uart.o
                   0x00029e                  _resetBTModule
                   0x0002b0                  _UARTInit230400
                   0x0002ce                  _UARTInit9600
@@ -1346,19 +1354,23 @@ __c30_signature
                   0x000330                  _UARTConfigBaudRate215400
                   0x00034c                  _UARTGetFilter
                   0x000368                  _UARTGetADType
-                  0x000384                  _UARTSleep
-                  0x0003a0                  _UARTWakeUp
-                  0x0003be                  _UARTWriteChar
-                  0x0003d6                  _UARTWriteByte
-                  0x0003ee                  _initBTModule
+                  0x000384                  _UARTSetADTypeIOSVal
+                  0x0003a0                  _UARTSleep
+                  0x0003bc                  _UARTgetBondType
+                  0x0003d8                  _UARTgetVersionSoft
+                  0x0003f4                  _UARTgetMode
+                  0x000410                  _UARTWakeUp
+                  0x00042e                  _UARTWriteChar
+                  0x000446                  _UARTWriteByte
+                  0x00045e                  _initBTModule
 
-.init.delay32     0x000418         0x1c
- .init.delay32    0x000418         0x1c d:/mplabx/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                  0x000418                  ___delay32
+.init.delay32     0x000488         0x1c
+ .init.delay32    0x000488         0x1c d:/mplabx/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
+                  0x000488                  ___delay32
 
-.text             0x000434          0xe
- .text            0x000434          0xe build/default/production/newmainXC16.o
-                  0x000434                  _main
+.text             0x0004a4         0x14
+ .text            0x0004a4         0x14 build/default/production/newmainXC16.o
+                  0x0004a4                  _main
 
-.dinit            0x000442          0x2
- .dinit           0x000442          0x2 data_init
+.dinit            0x0004b8          0x2
+ .dinit           0x0004b8          0x2 data_init

@@ -27,6 +27,10 @@ void UARTGetFilter();
 void UARTGetADType();
 void UARTSleep();
 void initBTModule();
+void UARTgetBondType();
+void UARTgetVersionSoft();
+void UARTgetMode();
+void UARTSetADTypeIOSVal();
 
 #endif	/* _UART_H */
 
