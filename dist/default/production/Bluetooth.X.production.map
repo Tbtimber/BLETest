@@ -56,10 +56,10 @@ Program Memory  [Origin = 0x200, Length = 0x2a00]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0x9e            0xed  (237)
-.text                        0x29e                0x3e            0x5d  (93)
-.dinit                       0x2dc                 0x2             0x3  (3)
+.text                        0x29e                0x54            0x7e  (126)
+.dinit                       0x2f2                 0x2             0x3  (3)
 
-                     Total program memory used (bytes):          0x14d  (333) 2%
+                     Total program memory used (bytes):          0x16e  (366) 2%
 
 
 Data Memory  [Origin = 0x800, Length = 0x800]
@@ -190,18 +190,18 @@ __FICD
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x4e8
+.debug_info       0x000000        0x4f4
  *(.debug_info)
- .debug_info      0x000000        0x4e8 build/default/production/newmainXC16.o
+ .debug_info      0x000000        0x4f4 build/default/production/newmainXC16.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0xd4
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0xd4 build/default/production/newmainXC16.o
 
-.debug_line       0x000000         0xea
+.debug_line       0x000000        0x104
  *(.debug_line)
- .debug_line      0x000000         0xea build/default/production/newmainXC16.o
+ .debug_line      0x000000        0x104 build/default/production/newmainXC16.o
 
 .debug_frame      0x000000         0x24
  *(.debug_frame)
@@ -1285,9 +1285,9 @@ __c30_signature
 .config_BSS       0xf80000          0x2
  .config_BSS      0xf80000          0x2 build/default/production/newmainXC16.o
 
-.text             0x00029e         0x3e
- .text            0x00029e         0x3e build/default/production/newmainXC16.o
+.text             0x00029e         0x54
+ .text            0x00029e         0x54 build/default/production/newmainXC16.o
                   0x00029e                  _main
 
-.dinit            0x0002dc          0x2
- .dinit           0x0002dc          0x2 data_init
+.dinit            0x0002f2          0x2
+ .dinit           0x0002f2          0x2 data_init

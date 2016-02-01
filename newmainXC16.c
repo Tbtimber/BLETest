@@ -64,8 +64,8 @@ int main(void) {
     IFS0bits.T1IF=0;
     
     
-    
-    while(1){
+    int j;
+    for(j=0;j<9;j++){
         //while(IFS0bits.T1IF == 0){}
         //IFS0bits.T1IF=0;
         
