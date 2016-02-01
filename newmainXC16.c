@@ -1,6 +1,12 @@
 //#include "p24FV16KM204.inc"
 #include "xc.h"
 
+#define FCY 16000000UL
+
+#include "libpic30.h"
+#include "uart.h"
+
+
 
 
 // FBS
@@ -46,38 +52,36 @@
 
 
 int main(void) {
-
+    //resetBTModule();
+    __delay_ms(100);
+    UARTInit230400();
+    //UARTInit9600();
+    __delay_ms(100);
+    //UARTInit9600();
+    UARTWakeUp();
+    __delay_ms(100);
+    //UARTgetBaudRate();
+    /*
+    UARTConfigBaudRate(0x08);
+    delay();
     
-    CLKDIV = 0x0000;
-//    TRISB = 0x0000;     // port B en sortie
+    delay();
     
-    U1BRG = 0x0010;
-    
-    U1MODE = 0b1000100000001000;
-    U1STA =  0b1000010100010000;
-    
-    /// timer/////
-    T1CON = 0xA200;
-    PR1 = 0x257F;
-    /// end timer////
-    
-    IFS0bits.T1IF=0;
-    
-    
-    
+    /*UARTConfigBaudRate(0x08);
+    delay();
+    UARTInit230400();*/
     while(1){
+        //UARTGetADType();
+        //__delay_ms(100);
+        //UARTtestBT();
+        //UARTgetBaudRate();
+        //__delay_ms(100);
+        UARTGetFilter();
+        __delay_ms(100);
         //while(IFS0bits.T1IF == 0){}
-        //IFS0bits.T1IF=0;
+        //IFS0bits.T1IF=0;    
         
-        int i;
-        for(i=0;i<9;i++){
-            while(U1STAbits.UTXBF == 1){}
-            U1TXREG = i;
-        }
-        
-        //while(U1STAbits.UTXBF == 1){}  // test si le buffer est vide
-        U1TXREG = 0b11110000;
-         
+   
     }
             
     return 0;
