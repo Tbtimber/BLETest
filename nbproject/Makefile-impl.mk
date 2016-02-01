@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Bluetooth.X
+PROJECTNAME=BLETest
 
 # Active Configuration
 DEFAULTCONF=default

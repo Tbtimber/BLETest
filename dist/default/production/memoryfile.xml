@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/Bluetooth.X.production.elf">
+  <executable name="dist/default/production/BLETest.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
@@ -11,8 +11,13 @@
     <memory name="program">
       <units>bytes</units>
       <length>16128</length>
+<<<<<<< HEAD
       <used>366</used>
       <free>15762</free>
+=======
+      <used>891</used>
+      <free>15237</free>
+>>>>>>> 7d03f5b0a4e44615e694d9524a5d8a66748a2cd9
     </memory>
   </executable>
 </project>
