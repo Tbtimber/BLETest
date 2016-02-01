@@ -52,42 +52,10 @@
 
 
 int main(void) {
-    //resetBTModule();
-    __delay_ms(100);
-    UARTInit230400();
-    //UARTInit9600();
-    __delay_ms(100);
-    //UARTInit9600();
-    UARTWakeUp();
-    __delay_ms(100);
-    //UARTgetBaudRate();
-    /*
-    UARTConfigBaudRate(0x08);
-    delay();
-    
-<<<<<<< HEAD
-    int j;
-    for(j=0;j<9;j++){
-=======
-    delay();
-    
-    /*UARTConfigBaudRate(0x08);
-    delay();
-    UARTInit230400();*/
+    initBTModule();
     while(1){
-        //UARTGetADType();
-        //__delay_ms(100);
-        //UARTtestBT();
-        //UARTgetBaudRate();
-        //__delay_ms(100);
-        UARTGetFilter();
-        __delay_ms(100);
->>>>>>> 7d03f5b0a4e44615e694d9524a5d8a66748a2cd9
-        //while(IFS0bits.T1IF == 0){}
-        //IFS0bits.T1IF=0;    
-        
-   
+        UARTgetBaudRate();
+        __delay_ms(10);
     }
-            
     return 0;
 }

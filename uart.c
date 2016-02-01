@@ -5,20 +5,17 @@
 #include "uart.h"
 
 
+#define FCY 16000000UL
+#include "libpic30.h"
 
-void smallDelay() {
-    int k,l;
-    for(k=0; k<500; k++){
-            for(l=0; l<255; l++){
-        }
-    }
-}
+
+
 
 void resetBTModule() {
     //Branch the reset pin of module to ground
     TRISBbits.TRISB15 = 0;//0for output and 1 for input //RB15 is set in this case
     PORTBbits.RB15 = 0;
-    smallDelay();
+    __delay_ms(50);
     PORTBbits.RB15 = 1;
 }
 
@@ -85,14 +82,13 @@ void UARTgetBaudRate(){
     UARTWriteChar('?');
 }
 
-void UARTConfigBaudRate(UINT8_T baudRateChosen){
+void UARTConfigBaudRate215400(){
     UARTBasicCommand();
     UARTWriteChar('B');
     UARTWriteChar('A');
     UARTWriteChar('U');
     UARTWriteChar('D');
     UARTWriteChar('8');
-    //UARTWriteByte(baudRateChosen);
 }
 
 void UARTGetFilter(){
@@ -126,7 +122,7 @@ void UARTWakeUp(){
     for(i=0;i<83;i++){
         UARTWriteChar('C');
     }    
-   // UARTWriteChar('\0');
+    UARTWriteChar('\0');
 }
 
 void UARTWriteChar(char data){
@@ -138,6 +134,21 @@ void UARTWriteByte(UINT8_T data){
     while(U1STAbits.UTXBF == 1){}
     U1TXREG = data;
 }
+
+//Set up UART at 9600 and wake up BT + set BT baud to 230400 then put the pic uart to 230400 and wake module again
+void initBTModule() {
+    UARTInit9600();
+    UARTWakeUp();
+    __delay_ms(10);
+    UARTConfigBaudRate215400();
+    __delay_ms(10);
+    UARTSleep();
+    __delay_ms(10);
+    UARTInit230400();
+    UARTWakeUp();
+    __delay_ms(10);
+}
+
 
 /*
 void UARTInit(UINT16_T baudRate) {
@@ -185,7 +196,7 @@ UINT8_T UARTReadByte(void) {
 
     return(RCREG1);
 }
-/*
+
 void interrupt low_priority SerialRxPinInterrupt() {
 
     if (PIR1bits.RCIF == 1) {               //check if the interrupt is caused by RX pin
