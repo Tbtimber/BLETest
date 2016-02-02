@@ -59,12 +59,12 @@ Program Memory  [Origin = 0x200, Length = 0x2a00]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0x9e            0xed  (237)
-.text                        0x29e               0x1ea           0x2df  (735)
-.init.delay32                0x488                0x1c            0x2a  (42)
-.text                        0x4a4                0x14            0x1e  (30)
-.dinit                       0x4b8                 0x2             0x3  (3)
+.text                        0x29e               0x1ee           0x2e5  (741)
+.init.delay32                0x48c                0x1c            0x2a  (42)
+.text                        0x4a8                0x14            0x1e  (30)
+.dinit                       0x4bc                 0x2             0x3  (3)
 
-                     Total program memory used (bytes):          0x417  (1047) 6%
+                     Total program memory used (bytes):          0x41d  (1053) 6%
 
 
 Data Memory  [Origin = 0x800, Length = 0x800]
@@ -97,48 +97,48 @@ External Symbols in Program Memory (by address):
                   0x0002ce                  _UARTInit9600
                   0x0002ec                  _UARTBasicCommand
                   0x0002fe                  _UARTtestBT
-                  0x000314                  _UARTgetBaudRate
-                  0x000330                  _UARTConfigBaudRate215400
-                  0x00034c                  _UARTGetFilter
-                  0x000368                  _UARTGetADType
-                  0x000384                  _UARTSetADTypeIOSVal
-                  0x0003a0                  _UARTSleep
-                  0x0003bc                  _UARTgetBondType
-                  0x0003d8                  _UARTgetVersionSoft
-                  0x0003f4                  _UARTgetMode
-                  0x000410                  _UARTWakeUp
-                  0x00042e                  _UARTWriteChar
-                  0x000446                  _UARTWriteByte
-                  0x00045e                  _initBTModule
-                  0x000488                  ___delay32
-                  0x0004a4                  _main
+                  0x000318                  _UARTgetBaudRate
+                  0x000334                  _UARTConfigBaudRate215400
+                  0x000350                  _UARTGetFilter
+                  0x00036c                  _UARTGetADType
+                  0x000388                  _UARTSetADTypeIOSVal
+                  0x0003a4                  _UARTSleep
+                  0x0003c0                  _UARTgetBondType
+                  0x0003dc                  _UARTgetVersionSoft
+                  0x0003f8                  _UARTgetMode
+                  0x000414                  _UARTWakeUp
+                  0x000432                  _UARTWriteChar
+                  0x00044a                  _UARTWriteByte
+                  0x000462                  _initBTModule
+                  0x00048c                  ___delay32
+                  0x0004a8                  _main
 
 External Symbols in Program Memory (by name):
 
                   0x0002ec                  _UARTBasicCommand
-                  0x000330                  _UARTConfigBaudRate215400
-                  0x000368                  _UARTGetADType
-                  0x00034c                  _UARTGetFilter
+                  0x000334                  _UARTConfigBaudRate215400
+                  0x00036c                  _UARTGetADType
+                  0x000350                  _UARTGetFilter
                   0x0002b0                  _UARTInit230400
                   0x0002ce                  _UARTInit9600
-                  0x000384                  _UARTSetADTypeIOSVal
-                  0x0003a0                  _UARTSleep
-                  0x000410                  _UARTWakeUp
-                  0x000446                  _UARTWriteByte
-                  0x00042e                  _UARTWriteChar
-                  0x000314                  _UARTgetBaudRate
-                  0x0003bc                  _UARTgetBondType
-                  0x0003f4                  _UARTgetMode
-                  0x0003d8                  _UARTgetVersionSoft
+                  0x000388                  _UARTSetADTypeIOSVal
+                  0x0003a4                  _UARTSleep
+                  0x000414                  _UARTWakeUp
+                  0x00044a                  _UARTWriteByte
+                  0x000432                  _UARTWriteChar
+                  0x000318                  _UARTgetBaudRate
+                  0x0003c0                  _UARTgetBondType
+                  0x0003f8                  _UARTgetMode
+                  0x0003dc                  _UARTgetVersionSoft
                   0x0002fe                  _UARTtestBT
                   0x00029a                  __DefaultInterrupt
-                  0x000488                  ___delay32
+                  0x00048c                  ___delay32
                   0x00023c                  __data_init
                   0x00023c                  __data_init_standard
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00045e                  _initBTModule
-                  0x0004a4                  _main
+                  0x000462                  _initBTModule
+                  0x0004a8                  _main
                   0x00029e                  _resetBTModule
 
 Memory Configuration
@@ -245,10 +245,10 @@ __FICD
  .debug_abbrev    0x000000         0x36 build/default/production/newmainXC16.o
  .debug_abbrev    0x000036        0x122 build/default/production/uart.o
 
-.debug_line       0x000000        0x5c1
+.debug_line       0x000000        0x5c9
  *(.debug_line)
  .debug_line      0x000000         0x6f build/default/production/newmainXC16.o
- .debug_line      0x00006f        0x552 build/default/production/uart.o
+ .debug_line      0x00006f        0x55a build/default/production/uart.o
 
 .debug_frame      0x000000        0x158
  *(.debug_frame)
@@ -1343,34 +1343,34 @@ __c30_signature
 .config_BSS       0xf80000          0x2
  .config_BSS      0xf80000          0x2 build/default/production/newmainXC16.o
 
-.text             0x00029e        0x1ea
- .text            0x00029e        0x1ea build/default/production/uart.o
+.text             0x00029e        0x1ee
+ .text            0x00029e        0x1ee build/default/production/uart.o
                   0x00029e                  _resetBTModule
                   0x0002b0                  _UARTInit230400
                   0x0002ce                  _UARTInit9600
                   0x0002ec                  _UARTBasicCommand
                   0x0002fe                  _UARTtestBT
-                  0x000314                  _UARTgetBaudRate
-                  0x000330                  _UARTConfigBaudRate215400
-                  0x00034c                  _UARTGetFilter
-                  0x000368                  _UARTGetADType
-                  0x000384                  _UARTSetADTypeIOSVal
-                  0x0003a0                  _UARTSleep
-                  0x0003bc                  _UARTgetBondType
-                  0x0003d8                  _UARTgetVersionSoft
-                  0x0003f4                  _UARTgetMode
-                  0x000410                  _UARTWakeUp
-                  0x00042e                  _UARTWriteChar
-                  0x000446                  _UARTWriteByte
-                  0x00045e                  _initBTModule
+                  0x000318                  _UARTgetBaudRate
+                  0x000334                  _UARTConfigBaudRate215400
+                  0x000350                  _UARTGetFilter
+                  0x00036c                  _UARTGetADType
+                  0x000388                  _UARTSetADTypeIOSVal
+                  0x0003a4                  _UARTSleep
+                  0x0003c0                  _UARTgetBondType
+                  0x0003dc                  _UARTgetVersionSoft
+                  0x0003f8                  _UARTgetMode
+                  0x000414                  _UARTWakeUp
+                  0x000432                  _UARTWriteChar
+                  0x00044a                  _UARTWriteByte
+                  0x000462                  _initBTModule
 
-.init.delay32     0x000488         0x1c
- .init.delay32    0x000488         0x1c d:/mplabx/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
-                  0x000488                  ___delay32
+.init.delay32     0x00048c         0x1c
+ .init.delay32    0x00048c         0x1c d:/mplabx/bin/bin/../../lib\liblega-pic30-elf.a(delay32.Leo)
+                  0x00048c                  ___delay32
 
-.text             0x0004a4         0x14
- .text            0x0004a4         0x14 build/default/production/newmainXC16.o
-                  0x0004a4                  _main
+.text             0x0004a8         0x14
+ .text            0x0004a8         0x14 build/default/production/newmainXC16.o
+                  0x0004a8                  _main
 
-.dinit            0x0004b8          0x2
- .dinit           0x0004b8          0x2 data_init
+.dinit            0x0004bc          0x2
+ .dinit           0x0004bc          0x2 data_init

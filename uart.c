@@ -70,7 +70,7 @@ void UARTtestBT(){
     UARTWriteChar('E');
     UARTWriteChar('S');
     UARTWriteChar('T');
-    
+    UARTWriteChar('\n');
 }
 
 void UARTgetBaudRate(){

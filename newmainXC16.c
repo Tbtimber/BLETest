@@ -57,10 +57,10 @@ int main(void) {
     //UARTSetADTypeIOSVal();
     __delay_ms(50);
     while(1){
-        UARTGetADType();
+       // UARTGetADType();
+        UARTtestBT();
         
-        
-        __delay_ms(10);
+        __delay_ms(3000);
     }
     return 0;
 }
